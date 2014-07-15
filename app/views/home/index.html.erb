@@ -1,4 +1,12 @@
-<h3>Home</h3>
-<% @users.each do |user| %>
-  <p>User: <%=link_to user.name, user %></p>
-<% end %>s
+<h3>Welcome <%= current_user.name %></h3>
+<span>Account Details</span>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+  </tr>
+  <tr>
+    <td><%= current_user.name %></td>
+    <td><%= current_user.email %></td>
+  </tr>
+</table>

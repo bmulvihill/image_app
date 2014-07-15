@@ -6,11 +6,8 @@ class User
       record if record && record.authenticatable_salt == salt
     end
   end
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  # attr_accessible :name, :email, :password, :password_confirmation, :remember_me
 
   ## Database authenticatable
   field :email,              type: String, default: ""
@@ -32,14 +29,4 @@ class User
   field :name
   validates_presence_of :name
   validates_uniqueness_of :name, :email, case_sensitive: false
-  ## Confirmable
-  # field :confirmation_token,   type: String
-  # field :confirmed_at,         type: Time
-  # field :confirmation_sent_at, type: Time
-  # field :unconfirmed_email,    type: String # Only if using reconfirmable
-
-  ## Lockable
-  # field :failed_attempts, type: Integer, default: 0 # Only if lock strategy is :failed_attempts
-  # field :unlock_token,    type: String # Only if unlock strategy is :email or :both
-  # field :locked_at,       type: Time
 end
