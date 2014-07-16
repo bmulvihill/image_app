@@ -19,6 +19,6 @@ test:
 production:
   sessions:
     default:
-      database: image_app_production
+      database: image_app
       hosts:
         - localhost:27017

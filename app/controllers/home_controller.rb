@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
 	def index
-	  @users = User.all
+	  @images = Images.top_ten
 	end
 end
