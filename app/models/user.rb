@@ -1,5 +1,7 @@
 class User
   include Mongoid::Document
+  has_many :photos
+
   class << self
     def serialize_from_session(key, salt)
       record = to_adapter.get(key[0]["$oid"])

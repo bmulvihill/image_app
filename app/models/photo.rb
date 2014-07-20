@@ -1,11 +1,12 @@
-class Image
+class Photo
   include Mongoid::Document
   include Mongoid::Paperclip
-    has_mongoid_attached_file :png,
+    belongs_to :user
+    has_mongoid_attached_file :img,
     url: "/assets/system/:id/:style/:basename.:extension",
     path: ":rails_root/public/assets/system/:id/:style/:basename.:extension",
     styles: { thumb: '120x120', large: '300x400' }
-    do_not_validate_attachment_file_type :png
+    do_not_validate_attachment_file_type :img
 
     field :tags, type: Array
     field :albums, type: Array
