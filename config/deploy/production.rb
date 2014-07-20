@@ -4,9 +4,9 @@
 # is considered to be the first unless any hosts have the primary
 # property set.  Don't declare `role :all`, it's a meta role.
 
-role :app, %w{ec2-user@54.191.153.32}
-role :web, %w{ec2-user@54.191.153.32}
-role :db,  %w{ec2-user@54.191.153.32}
+role :app, %w{ec2-user@54.191.168.243}
+role :web, %w{ec2-user@54.191.168.243}
+role :db,  %w{ec2-user@54.191.168.243}
 
 set :ec2_access_key_id, nil
 set :ec2_secret_access_key, nil
