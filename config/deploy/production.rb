@@ -1,9 +1,4 @@
-# Simple Role Syntax
-# ==================
-# Supports bulk-adding hosts to roles, the primary server in each group
-# is considered to be the first unless any hosts have the primary
-# property set.  Don't declare `role :all`, it's a meta role.
-
+#Deploy code to production server
 role :app, %w{ec2-user@54.191.168.243}
 role :web, %w{ec2-user@54.191.168.243}
 role :db,  %w{ec2-user@54.191.168.243}

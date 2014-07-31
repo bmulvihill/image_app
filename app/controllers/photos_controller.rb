@@ -1,5 +1,6 @@
 class PhotosController < ApplicationController
   def index
+    # get current users top ten photos
     @images = current_user.photos
   end
 
@@ -8,6 +9,7 @@ class PhotosController < ApplicationController
   end
 
   def create
+    # create a new photo and insert into the database
     @image = Photo.create(image_params)
     current_user.photos << @image
     current_user.save

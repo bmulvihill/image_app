@@ -1,6 +1,6 @@
 class User
   include Mongoid::Document
-  has_many :photos
+  has_many :photos # set association
 
   class << self
     def serialize_from_session(key, salt)
@@ -8,21 +8,23 @@ class User
       record if record && record.authenticatable_salt == salt
     end
   end
+
+  # devise helps with user authentication
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  ## Database authenticatable
+  # fields allowed in mongodb
   field :email,              type: String, default: ""
   field :encrypted_password, type: String, default: ""
 
-  ## Recoverable
+  # Recoverable fields
   field :reset_password_token,   type: String
   field :reset_password_sent_at, type: Time
 
-  ## Rememberable
+  # Rememberable fields
   field :remember_created_at, type: Time
 
-  ## Trackable
+  # Trackable fields
   field :sign_in_count,      type: Integer, default: 0
   field :current_sign_in_at, type: Time
   field :last_sign_in_at,    type: Time
