@@ -1,6 +1,8 @@
 class User
   include Mongoid::Document
-  has_many :photos # set association
+  has_many :photos
+  has_many :comments
+  has_many :albums
 
   class << self
     def serialize_from_session(key, salt)
