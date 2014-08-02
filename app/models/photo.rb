@@ -16,11 +16,13 @@ class Photo
 
   # photo fields allowable in mongodb
   field :tags, type: Array, default: []
-  field :albums, type: Array, default: []
   field :thumbs_up, type: Integer
   field :description, type: String
-  field :comments, type: Array
 
+  # Returns the url of the image
+  def get_url
+    img.url
+  end
   # Callback performed before model is persisted to the database
   # If any tags are present insert them into the tags field as well
   def set_tags

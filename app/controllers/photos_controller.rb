@@ -6,6 +6,7 @@ class PhotosController < ApplicationController
 
   def new
     @image = Photo.new
+    @albums = Album.all
   end
 
   def create
@@ -19,6 +20,6 @@ class PhotosController < ApplicationController
   private
 
   def image_params
-    params.require(:photo).permit([:img, :description,:tags_list])
+    params.require(:photo).permit([:img, :description,:tags_list, :album_id])
   end
 end

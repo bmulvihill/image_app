@@ -1,0 +1,21 @@
+<div class='row'>
+  Current Albums
+</div>
+<div class="row">
+  <%= link_to 'Add Album', new_album_path %>
+</div>
+<div class="row">
+  <% @albums.each do |album| %>
+    <div class="col-xs-6 col-md-3">
+      <div class="thumbnail">
+      <a href='#'><%= image_tag album.get_cover_image_url %></a>
+      <b><%= album.name %></b><br />
+      <%= album.description %><br />
+      <% album.tags.each do |tag| %>
+        <a href='#'><%= '#' << tag %></a>
+      <% end %><br />
+      <%= link_to 'Add Comment', new_comment_path %>
+      </div>
+    </div>
+  <% end %>
+</div>

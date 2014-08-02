@@ -19,7 +19,6 @@ RSpec.describe Photo, :type => :model do
   end
 
   context '#set_tags' do
-
     it 'will set tags found in the description to the tags field' do
       # tags are expected in the #tag format
       photo = Photo.new
