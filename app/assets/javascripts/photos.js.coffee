@@ -1,6 +1,8 @@
 $(document).ready ->
-  $('.new_comment').on 'click', (event) ->
+  $('.close_comment').toggle()
+  $('.add_comment').on 'click', (event) ->
     self = this
     $.get '/comments/new', (data) ->
-      console.log event.target.id
-      $(self).append(data)
+      $(self).siblings('.comment').append(data)
+      $(self).toggle()
+      $(self).siblings('.close_comment').toggle()

@@ -16,7 +16,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-.new_comment {
+.add_comment, .close_comment {
   color: #428bca;
   cursor: pointer;
 }

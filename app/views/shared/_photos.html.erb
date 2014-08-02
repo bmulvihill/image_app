@@ -7,8 +7,13 @@
       Tags: <% image.tags.each do |tag| %>
         <a href='#'><%= '#' << tag %></a>
       <% end %><br />
-      <div class='new_comment'>
+      <div class='add_comment'>
         Add Comment
+      </div>
+      <div class='close_comment'>
+        Close
+      </div>
+      <div class='comment'>
       </div>
       <% image.comments.each do |comment| %>
         <%= comment.text %>
