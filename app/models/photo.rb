@@ -1,9 +1,11 @@
 class Photo
   include Mongoid::Document
   include Mongoid::Paperclip
+
   belongs_to :user
   belongs_to :album
   has_many :comments
+  before_save :set_tags
 
   # set file system parameters
   has_mongoid_attached_file :img,
@@ -18,6 +20,14 @@ class Photo
   field :thumbs_up, type: Integer
   field :description, type: String
   field :comments, type: Array
+
+  # Callback performed before model is persisted to the database
+  # If any tags are present insert them into the tags field as well
+  def set_tags
+    # Regex to find tags and set them into the database
+    description.scan(/(?:\s|^)(?:#(?!(?:\d+|\w+?_|_\w+?)(?:\s|$)))(\w+)(?=\s|$)/i).flatten.each {|tag| self.tags << tag}
+    self.tags.uniq!
+  end
 
   # set tags into an array
   def tags_list=(arg)

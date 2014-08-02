@@ -6,7 +6,7 @@ class Album
   field :name, type: String
   field :tags, type: Array
 
-   # set tags into an array
+  # set tags into an array
   def tags_list=(arg)
     self.tags = arg.split(',').map { |v| v.strip }
   end

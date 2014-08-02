@@ -1,10 +1,20 @@
-<span>Current Images</span>
+<div class='row'>
+  Current Images
+</div>
+<div class="row">
+  <%= link_to 'Add Image', new_photo_path %>
+</div>
 <div class="row">
   <% @images.each do |image| %>
     <div class="col-xs-6 col-md-3">
-      <a href="#" class="thumbnail">
-        <%= image_tag image.img.url(:thumb) %>
-      </a>
+      <div class="thumbnail">
+      <a href='#'><%= image_tag image.img.url(:thumb) %></a>
+      <%= image.description %><br />
+      <% image.tags.each do |tag| %>
+        <a href='#'><%= '#' << tag %></a>
+      <% end %><br />
+      <%= link_to 'Add Comment', new_comment_path %>
+      </div>
     </div>
   <% end %>
 </div>

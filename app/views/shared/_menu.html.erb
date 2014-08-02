@@ -12,8 +12,8 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><%= link_to 'Add Image', new_photo_path %></li>
-        <li><%= link_to 'View All', photos_path %></a></li>
+        <li><%= link_to 'Images', photos_path %></li>
+        <li><%= link_to 'Albums', albums_path %></li>
       </ul>
       <p class="navbar-text navbar-right">Signed in as <%= current_user.name unless current_user.nil? %></p>
     </div><!-- /.navbar-collapse -->
