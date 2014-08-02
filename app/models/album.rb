@@ -1,8 +1,8 @@
 class Album
   include Mongoid::Document
   belongs_to :user
-  has_many :photos
-  has_many :comments
+  has_many :photos 
+  has_many :comments, as: :commentable
 
   field :name, type: String
   field :description, type: String

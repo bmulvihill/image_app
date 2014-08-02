@@ -4,7 +4,7 @@ class Photo
 
   belongs_to :user
   belongs_to :album
-  has_many :comments
+  has_many :comments, as: :commentable
   before_save :set_tags
 
   # set file system parameters

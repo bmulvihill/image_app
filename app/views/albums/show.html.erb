@@ -1,7 +1,7 @@
 <div class='row'>
-Current Images
+  <h3><%= @album.name %> </h3>
 </div>
 <div class="row">
-<%= link_to 'Add Image', new_photo_path %>
+  <%= link_to 'Add Image', new_photo_path %>
 </div>
 <%= render "shared/photos" %>

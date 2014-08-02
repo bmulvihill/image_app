@@ -1,0 +1,19 @@
+<div class="row">
+  <% @images.each do |image| %>
+    <div class="col-xs-6 col-md-3">
+      <div class="thumbnail">
+      <a href='#'><%= image_tag image.img.url %></a>
+      Description: <%= image.description %><br />
+      Tags: <% image.tags.each do |tag| %>
+        <a href='#'><%= '#' << tag %></a>
+      <% end %><br />
+      <div class='new_comment'>
+        Add Comment
+      </div>
+      <% image.comments.each do |comment| %>
+        <%= comment.text %>
+      <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>

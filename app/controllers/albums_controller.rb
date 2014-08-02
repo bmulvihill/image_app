@@ -1,5 +1,6 @@
 # This controller handles all requests for the Album model
 class AlbumsController < ApplicationController
+  
   def index
     # Query all albums from the database
     # Translates to the following MongoDB query:
@@ -18,6 +19,12 @@ class AlbumsController < ApplicationController
     current_user.albums << @album
     current_user.save
     redirect_to action: :index  
+  end
+
+  def show
+    # Query to find the album being searched for
+    @album = Album.find(params[:id])
+    @images = @album.photos
   end
 
   private
