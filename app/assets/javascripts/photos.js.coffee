@@ -1,4 +1,4 @@
-$(document).ready ->
+ready = ->
   $('.close_comment').toggle()
   $('.add_comment').on 'click', (event) ->
     self = this
@@ -6,3 +6,5 @@ $(document).ready ->
       $(self).siblings('.comment').append(data)
       $(self).toggle()
       $(self).siblings('.close_comment').toggle()
+$(document).ready(ready)
+$(document).on('page:load', ready)
