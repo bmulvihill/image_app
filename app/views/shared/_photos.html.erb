@@ -7,7 +7,7 @@
       Tags: <% image.tags.each do |tag| %>
         <a href='#'><%= '#' << tag %></a>
       <% end %><br />
-      <div class='add_comment'>
+      <div class='add_comment' data='photos/<%= image.id %>'>
         Add Comment
       </div>
       <div class='close_comment'>
@@ -15,9 +15,13 @@
       </div>
       <div class='comment'>
       </div>
-      <% image.comments.each do |comment| %>
-        <%= comment.text %>
-      <% end %>
+      <div class='container-fluid'>
+        <% image.comments.each do |comment| %>
+          <div class='row'>
+            <%= comment.text %> by <%= comment.user.name %>
+          </div>
+        <% end %>
+      </div>
       </div>
     </div>
   <% end %>
