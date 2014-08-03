@@ -1,13 +1,13 @@
 <div class="row">
-  <% @images.each do |image| %>
+  <% @photos.each do |photo| %>
     <div class="col-xs-6 col-md-3">
       <div class="thumbnail">
-      <a href='#'><%= image_tag image.img.url %></a>
-      Description: <%= image.description %><br />
-      Tags: <% image.tags.each do |tag| %>
-        <a href='#'><%= '#' << tag %></a>
+      <a href='#'><%= image_tag photo.img.url %></a>
+      Description: <%= photo.description %><br />
+      Tags: <% photo.tags.each do |tag| %>
+        <%=link_to '#' << tag, tags_photos_path({tag: tag}) %></a>
       <% end %><br />
-      <div class='add_comment' data='photos/<%= image.id %>'>
+      <div class='add_comment' data='photos/<%= photo.id %>'>
         Add Comment
       </div>
       <div class='close_comment'>
@@ -16,7 +16,7 @@
       <div class='comment'>
       </div>
       <div class='container-fluid'>
-        <% image.comments.each do |comment| %>
+        <% photo.comments.each do |comment| %>
           <div class='row'>
             <%= comment.text %> by <%= comment.user.name %>
           </div>

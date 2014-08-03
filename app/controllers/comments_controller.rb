@@ -20,9 +20,9 @@ class CommentsController < ApplicationController
   end
 
   private
-
+  
+  # These are white listed parameters to prevent unwanted database properties from being written to
   def comment_params
-    # Allowable fields to be inserted into DB
     params.require(:comment).permit([:text, :commentable_id, :commentable_type])
   end
 end

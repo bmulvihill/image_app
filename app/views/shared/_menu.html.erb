@@ -14,7 +14,7 @@
       <ul class="nav navbar-nav">
         <li><%= link_to 'Images', photos_path %></li>
         <li><%= link_to 'Albums', albums_path %></li>
-        <li><%= link_to 'Account', users_path(current_user) %></li>
+        <li><%= link_to 'Account', edit_user_path(current_user) %></li>
       </ul>
       <p class="navbar-text navbar-right">Signed in as <%= current_user.name unless current_user.nil? %></p>
     </div><!-- /.navbar-collapse -->
