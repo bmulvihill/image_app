@@ -12,7 +12,7 @@
       <b><%= album.name %></b><br />
       <%= album.description %><br />
       <% album.tags.each do |tag| %>
-        <%=link_to '#' << tag, albums_tags_path({tag: tag}) %>
+        <%=link_to '#' << tag, tags_albums_path({tag: tag}) %>
       <% end %><br />
      <div class='add_comment' data='albums/<%= album.id %>'>
         Add Comment

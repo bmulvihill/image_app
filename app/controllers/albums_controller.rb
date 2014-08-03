@@ -35,7 +35,7 @@ class AlbumsController < ApplicationController
   def tags
     # This query translates to
     # db.albums.find({tags: params[:tag]})
-    @photos = Album.where(:tags => params[:tag])
+    @albums = Album.where(:tags => params[:tag])
     render :index
   end
 
