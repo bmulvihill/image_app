@@ -14,7 +14,20 @@
       <% album.tags.each do |tag| %>
         <a href='#'><%= '#' << tag %></a>
       <% end %><br />
-      <%= link_to 'Add Comment', new_comment_path %>
+     <div class='add_comment' data='albums/<%= album.id %>'>
+        Add Comment
+      </div>
+      <div class='close_comment'>
+        Close
+      </div>
+      <div class='comment'>
+      </div>
+      <div class='container-fluid'>
+        <% album.comments.each do |comment| %>
+          <div class='row'>
+            <%= comment.text %> by <%= comment.user.name %>
+          </div>
+        <% end %>
       </div>
     </div>
   <% end %>

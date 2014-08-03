@@ -1,5 +1,9 @@
 ready = ->
   $('.close_comment').toggle()
+  $('.close_comment').on 'click', (event) ->
+    $('.comment').empty()
+    $('.close_comment').toggle()
+    $('.add_comment').toggle()
   $('.add_comment').on 'click', (event) ->
     self = this
     url = $(self).attr("data")

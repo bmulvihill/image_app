@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
   def new
     # Create new comment object
     @parent = Photo.find(params[:photo_id]) if params[:photo_id]
-    @parent = Album.find(param[:album_id]) if params[:album_id]
+    @parent = Album.find(params[:album_id]) if params[:album_id]
     render layout: false
   end
 
