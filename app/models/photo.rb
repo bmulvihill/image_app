@@ -16,7 +16,7 @@ class Photo
 
   # photo fields allowable in mongodb
   field :tags, type: Array, default: []
-  field :thumbs_up, type: Integer
+  field :thumbs_up, type: Integer, default: 0
   field :description, type: String
 
   # Returns the url of the image

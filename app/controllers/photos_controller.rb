@@ -31,6 +31,18 @@ class PhotosController < ApplicationController
     render :index
   end
 
+  def thumbs_up
+    # Add Thumbs up to a photo document
+    # This query translates to
+    # db.photo.findOne({_id: params[:ids]})
+    @photo = Photo.find(params[:photo_id])
+    # update the document
+    @photo.thumbs_up += 1
+    # save the document
+    @photo.save
+    redirect_to :back   
+  end
+
   private
 
   # These are white listed parameters to prevent unwanted database properties from being written to

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 	devise_for :users
 	resources :users
 	resources :photos do
+    get :thumbs_up
     collection do
       get :tags
     end

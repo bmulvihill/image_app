@@ -7,6 +7,10 @@
       Tags: <% photo.tags.each do |tag| %>
         <%=link_to '#' << tag, tags_photos_path({tag: tag}) %></a>
       <% end %><br />
+      Thumbs Up: <%= photo.thumbs_up %><br />
+      <div class='add_thumbs_up' data='<%= photo.id %>'>
+        <%=link_to 'Add Thumbs Up', photo_thumbs_up_path(photo) %>
+      </div>
       <div class='add_comment' data='photos/<%= photo.id %>'>
         Add Comment
       </div>
