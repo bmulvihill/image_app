@@ -1,10 +1,10 @@
 <h3> Add a new Photo </h3>
 <%= form_for @photo, :url => photos_path, :html => { :multipart => true } do |f| %>
-  <p><%= f.label :img%><br />
+  <p><%= f.label :image%> Only JPG or GIF images are acceptable at this time!<br />
   <%= f.file_field :img %>
   <p><%= f.label :description %>: Enter a description of your photo, tags can be added using the #tag format<br />
   <%= f.text_field :description %></p>
-  <p><%= f.label :albums %>: Select an Album for your Photo<br />
+  <p><%= f.label :albums %>: (Optional) Select an Album for your Photo<br />
   <%= f.collection_select :album_id, @albums,:id,:name, include_blank: true %></p>
   <div><%= f.submit "Submit" %></div>
 <% end %>
