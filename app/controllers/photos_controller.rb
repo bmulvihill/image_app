@@ -1,7 +1,9 @@
 class PhotosController < ApplicationController
   def index
-    # get current users top ten photos
-    @photos = current_user.photos
+    # get current users photos sorted by thumbs up desc
+    # This qury translates to
+    # db.photos.find({"user_id"=> current_user.id}, "$orderby"=>{"thumbs_up"=>-1})
+    @photos = current_user.photos.order_by(:thumbs_up.desc)
   end
 
   def new
@@ -9,7 +11,7 @@ class PhotosController < ApplicationController
     @photo = Photo.new
     # Find all albums
     # This query translates to
-    # db.albums.find()
+    # db.albums.find({"user_id"=> current_user.id})
     @albums = current_user.albums
   end
 

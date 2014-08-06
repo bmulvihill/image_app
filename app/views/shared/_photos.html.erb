@@ -11,7 +11,7 @@
       <div class='add_thumbs_up' data='<%= photo.id %>'>
         <%=link_to 'Add Thumbs Up', photo_thumbs_up_path(photo) %>
       </div>
-      <div class='add_comment' data='photos/<%= photo.id %>'>
+      <div class='add_comment' data='<%= photo_path(photo) %>'>
         Add Comment
       </div>
       <div class='close_comment'>

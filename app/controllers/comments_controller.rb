@@ -16,7 +16,8 @@ class CommentsController < ApplicationController
     @comment.user = current_user
     # Save the record to the database
     @comment.save
-    redirect_to action: :index, controller: @comment.commentable_type.underscore.pluralize
+    redirect_to :back
+    #redirect_to action: :index, controller: @comment.commentable_type.underscore.pluralize
   end
 
   private
