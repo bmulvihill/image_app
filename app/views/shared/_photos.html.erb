@@ -2,7 +2,7 @@
   <% @photos.each do |photo| %>
     <div class="col-xs-6 col-md-3">
       <div class="thumbnail">
-      <a href='#'><%= image_tag photo.img.url %></a>
+      <%=link_to image_tag(photo.img.url), photo_path(photo) %></a>
       Description: <%= photo.description %><br />
       Tags: <% photo.tags.each do |tag| %>
         <%=link_to '#' << tag, tags_photos_path({tag: tag}) %></a>

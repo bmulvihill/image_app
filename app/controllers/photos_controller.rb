@@ -6,6 +6,10 @@ class PhotosController < ApplicationController
     @photos = current_user.photos.order_by(:thumbs_up.desc)
   end
 
+  def show
+    @photo = Photo.find(params[:id])
+  end
+
   def new
     # Create a new photo object
     @photo = Photo.new
