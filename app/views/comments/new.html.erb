@@ -1,7 +1,6 @@
 <%= form_for([@parent, Comment.new]) do |f| %>
   <%= f.hidden_field :commentable_type, value: @parent.class.name %>
   <%= f.hidden_field :commentable_id, value: @parent._id %>
-  <p><%= f.label :text%><br />
   <%= f.text_field :text %>
-  <%= f.submit 'Add', :class => 'comment_submit btn btn-submit' %>
+  <%= f.submit 'Add', :class => 'comment_submit btn btn-xs btn-submit' %>
 <% end %>

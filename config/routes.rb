@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 	root :to => "home#index"
 	devise_for :users
 	resources :users
-	
+	resources :all_photos
   resources :photos do
     get :thumbs_up
     collection do
