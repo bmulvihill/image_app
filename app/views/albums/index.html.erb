@@ -14,7 +14,7 @@
       <% album.tags.each do |tag| %>
         <%=link_to '#' << tag, tags_albums_path({tag: tag}) %>
       <% end %><br />
-      <%=button_to 'Add Photo', new_album_photo_path(album), class: 'btn btn-large btn-primary' %><br/>
+      <%=button_to 'Add Photo', new_album_photo_path(album), method: :get, class: 'btn btn-large btn-primary' %>
       <div class='add_comment' data='albums/<%= album.id %>'>
         <button class='btn btn-large btn-primary'>Add Comment</button>
       </div>
