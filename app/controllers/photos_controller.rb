@@ -29,6 +29,12 @@ class PhotosController < ApplicationController
     redirect_to action: :index  
   end
 
+  def destroy
+    @photo = Photo.find(params[:id])
+    @photo.destroy
+    redirect_to :back
+  end
+
   # Query MongoDB for all tags matching parameter
   def tags
     # This query translates to

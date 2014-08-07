@@ -8,6 +8,7 @@
         <%=link_to '#' << tag, tags_photos_path({tag: tag}) %></a>
       <% end %><br />
       Thumbs Up: <%= photo.thumbs_up %><br />
+      <%=link_to 'Remove Photo', photo_path(photo), method: :delete %>
       <div class='add_thumbs_up' data='<%= photo.id %>'>
         <%=link_to 'Add Thumbs Up', photo_thumbs_up_path(photo) %>
       </div>
