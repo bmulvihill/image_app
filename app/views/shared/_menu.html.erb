@@ -15,7 +15,6 @@
         <li><%= link_to 'My Images', photos_path %></li>
         <li><%= link_to 'Albums', albums_path %></li>
         <li><%= link_to 'All Images', all_photos_path %></li>
-        <li><%= (link_to 'Account', edit_user_path(current_user)) unless current_user.nil? %></li>
       </ul>
       <p class="navbar-text navbar-right"><%= (link_to 'Sign Out', destroy_user_session_path(current_user), method: :delete) unless current_user.nil? %></p>
       <p class="navbar-text navbar-right">Signed in as <%= current_user.name unless current_user.nil? %></p>
