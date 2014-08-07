@@ -5,6 +5,6 @@
   <p><%= f.label :description %>: Enter a description of your photo, tags can be added using the #tag format<br />
   <%= f.text_field :description %></p>
   <p><%= f.label :albums %>: (Optional) Select an Album for your Photo<br />
-  <%= f.collection_select :album_id, @albums,:id,:name, include_blank: true %></p>
+  <%= f.collection_select :album_id, @albums,:id,:name, include_blank: true, selected: @album %></p>
   <div><%= f.submit "Submit" %></div>
 <% end %>

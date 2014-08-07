@@ -13,6 +13,7 @@ class PhotosController < ApplicationController
   def new
     # Create a new photo object
     @photo = Photo.new
+    @album = params[:album_id]
     # Find all albums
     # This query translates to
     # db.albums.find({"user_id"=> current_user.id})

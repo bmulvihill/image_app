@@ -14,7 +14,8 @@
       <% album.tags.each do |tag| %>
         <%=link_to '#' << tag, tags_albums_path({tag: tag}) %>
       <% end %><br />
-     <div class='add_comment' data='albums/<%= album.id %>'>
+      <%=link_to 'Add Photo to Album', new_album_photo_path(album) %><br/>
+      <div class='add_comment' data='albums/<%= album.id %>'>
         Add Comment
       </div>
       <div class='close_comment'>
