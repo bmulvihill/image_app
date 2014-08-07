@@ -17,7 +17,7 @@ class Album
   # If any tags are present insert them into the tags field as well
   def set_tags
     # Regex to find tags and set them into the database
-    description.scan(/(?:\s|^)(?:#(?!(?:\d+|\w+?_|_\w+?)(?:\s|$)))(\w+)(?=\s|$)/i).flatten.each {|tag| self.tags << tag}
+    description.scan(/#([A-Za-z0-9]+)/).flatten.each {|tag| self.tags << tag}
     self.tags.uniq!
   end
 
