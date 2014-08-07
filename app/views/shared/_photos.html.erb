@@ -8,15 +8,13 @@
         <%=link_to '#' << tag, tags_photos_path({tag: tag}) %></a>
       <% end %><br />
       Thumbs Up: <%= photo.thumbs_up %><br />
-      <%=link_to 'Remove Photo', photo_path(photo), method: :delete %>
-      <div class='add_thumbs_up' data='<%= photo.id %>'>
-        <%=link_to 'Add Thumbs Up', photo_thumbs_up_path(photo) %>
-      </div>
+      <%=button_to 'Remove', photo_path(photo), method: :delete, class: 'btn btn-sm btn-danger' %>
+      <%=button_to 'Thumbs Up!', photo_thumbs_up_path(photo), method: :get, class: 'btn btn-large btn-primary' %>
       <div class='add_comment' data='<%= photo_path(photo) %>'>
-        Add Comment
+        <button class='btn btn-large btn-primary'>Add Comment</button>
       </div>
       <div class='close_comment'>
-        Close
+        <button class='btn btn-large btn-primary'>Close</button>
       </div>
       <div class='comment'>
       </div>

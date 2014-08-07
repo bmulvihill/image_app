@@ -14,12 +14,12 @@
       <% album.tags.each do |tag| %>
         <%=link_to '#' << tag, tags_albums_path({tag: tag}) %>
       <% end %><br />
-      <%=link_to 'Add Photo to Album', new_album_photo_path(album) %><br/>
+      <%=button_to 'Add Photo', new_album_photo_path(album), class: 'btn btn-large btn-primary' %><br/>
       <div class='add_comment' data='albums/<%= album.id %>'>
-        Add Comment
+        <button class='btn btn-large btn-primary'>Add Comment</button>
       </div>
       <div class='close_comment'>
-        Close
+        <button class='btn btn-large btn-primary'>Close</button>
       </div>
       <div class='comment'>
       </div>
