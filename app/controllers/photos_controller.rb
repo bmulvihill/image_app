@@ -7,6 +7,9 @@ class PhotosController < ApplicationController
   end
 
   def show
+    # returns a single photo document
+    # This query translates to
+    # db.photos.find({_id: params[:id]})
     @photo = Photo.find(params[:id])
   end
 
@@ -24,10 +27,15 @@ class PhotosController < ApplicationController
     # Insert new photo into the MongoDB photo collection
     # This query translates to
     # db.photo.insert({_id: ObjectID, img: params[:img], description: params[:description], tags: params[:tags, album: params[:album_id]]})
-    @photo = Photo.create(photo_params)
-    current_user.photos << @photo
-    current_user.save
-    redirect_to action: :index  
+    @photo = Photo.new(photo_params)
+    if @photo.save
+      current_user.photos << @photo
+      current_user.save
+      redirect_to action: :index
+    else
+      flash[:alert] = "Please upload a valid format"
+      redirect_to :back
+    end 
   end
 
   def destroy

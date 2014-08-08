@@ -12,8 +12,8 @@ class Photo
   url: "/assets/system/:id/:style/:basename.:extension",
   path: ":rails_root/public/assets/system/:id/:style/:basename.:extension",
   styles: { thumb: '120x120', large: '300x400' }
-  do_not_validate_attachment_file_type :img
-
+  validates_attachment :img, presence: true,
+  content_type: { content_type: ["image/jpeg", "image/gif", "image/png"] }
   # photo fields allowable in mongodb
   field :tags, type: Array, default: []
   field :thumbs_up, type: Integer, default: 0
